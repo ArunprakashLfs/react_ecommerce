@@ -10,7 +10,7 @@ const Navbar = () =>{
             <div className="shop-container">
                 <Link to={'/shop'} className="link">Shop</Link>
                 <Link to={'/user'} className="link">User</Link>
-                <Link to={'/cart'} className="link"><FontAwesomeIcon icon="fa-brands fa-opencart" /></Link>
+                <Link to={'/cart'} className="link"><i class="fa-brands fa-opencart"></i></Link>
             </div>
         </nav>
     )
