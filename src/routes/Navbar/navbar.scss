@@ -7,7 +7,18 @@
     .brand-container{
         font-size: 1rem;
         text-transform: uppercase;
-        
+
+        .link{
+            text-decoration: none;
+        }
+    }
+    .shop-container{
+        font-size: 1rem;
+        text-transform: uppercase;
+        display: flex;
+        gap: 10px;
+        justify-content: space-between;
+        align-content: space-between;
         .link{
             text-decoration: none;
         }

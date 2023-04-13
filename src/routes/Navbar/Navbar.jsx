@@ -8,9 +8,9 @@ const Navbar = () =>{
                 <Link to={'/'} className="link">Nithin Traders</Link>
             </div>
             <div className="shop-container">
-                <Link to={'/shop'}>Shop</Link>
-                <Link to={'/user'}>User</Link>
-                <Link to={'/cart'}></Link>
+                <Link to={'/shop'} className="link">Shop</Link>
+                <Link to={'/user'} className="link">User</Link>
+                <Link to={'/cart'} className="link"><FontAwesomeIcon icon="fa-brands fa-opencart" /></Link>
             </div>
         </nav>
     )
