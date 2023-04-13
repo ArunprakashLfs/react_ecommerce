@@ -1,9 +1,10 @@
 // import Data from '../../components/datas/data'
+import './home.scss'
 
 const Home =({Data})=>{
     const data = [...Data];
     return(
-        <div>
+        <div className="container">
             {data.map(({title, brand})=>{
                 return(
                    <div className="card">
