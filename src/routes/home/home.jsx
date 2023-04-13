@@ -1,10 +1,16 @@
-const Home =()=>{
+// import Data from '../../components/datas/data'
+
+const Home =({Data})=>{
+    const data = [...Data];
     return(
-        Data.map((val)=>{
-            return(
-                <h2>{val.title}</h2>
-            )
-        })
+        <div>
+            {data.map(({title})=>{
+                return(
+                    <h2>{title}</h2>
+                )
+            })}
+        </div>
     )
+    
 }
 export default Home;
