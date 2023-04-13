@@ -5,7 +5,7 @@ const Navbar = () =>{
     return(
         <nav className="navbar-container">
             <div className="brand-container">
-                <Link to={'/'}>Nithin Traders</Link>
+                <Link to={'/'} className="link">Nithin Traders</Link>
             </div>
             <div className="shop-container">
                 <Link to={'/shop'}>Shop</Link>
