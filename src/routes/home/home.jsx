@@ -8,9 +8,11 @@ const Home =({Data})=>{
             {data.map(({title, brand, images})=>{
                 return(
                    <div className="card">
-                    <h2>{title}</h2>
-                    <h3>{brand}</h3>
-                    <div>
+                    <div className='body'>
+                        <h2>{title}</h2>
+                        <h3>{brand}</h3>
+                    </div>
+                    <div className='background-image' style={{backgroundImage: `url(${images[0]})`}}>
                         
                     </div>
                    </div>
