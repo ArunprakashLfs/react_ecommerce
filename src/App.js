@@ -15,7 +15,7 @@ function App() {
       element={<><Navbar/> <Outlet/></>}> 
       <Route index
       element={<Home Data={Data}/>}></Route>
-      <Route path='/shop' element={<Shop/>}></Route>
+      <Route path='/shop' element={<Shop Data={Data}/>}></Route>
       <Route path='/user' element={<User/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
       </Route>

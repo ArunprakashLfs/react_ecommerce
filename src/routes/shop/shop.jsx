@@ -1,6 +1,22 @@
-const Shop =()=>{
+import './shop.scss'
+const Shop =({Data})=>{
+    const data = [...Data];
     return(
-        <h2>Shoping Page</h2>
+        <div className="container">
+            {data.map(({title, brand, images})=>{
+                return(
+                   <div className="card">
+                    <div className='body'>
+                        <h2>{title}</h2>
+                        <h3>{brand}</h3>
+                    </div>
+                    <div className='background-image' style={{backgroundImage: `url(${images[0]})`}}>
+                        
+                    </div>
+                   </div>
+                )
+            })}
+        </div>
     )
 }
 export default Shop;
