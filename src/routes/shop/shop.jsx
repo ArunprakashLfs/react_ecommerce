@@ -8,10 +8,10 @@ const Shop =({Data})=>{
                    <div className="card">
                     <div className='body'>
                         <h2>{title}</h2>
-                        <h3>{brand}</h3>
+                        <p>{brand}</p>
                     </div>
-                    <div className='background-image' style={{backgroundImage: `url(${images[0]})`}}>
-                        
+                    <div className='background-image' >
+                        <img src={images[0]} alt={title}/>
                     </div>
                    </div>
                 )

@@ -1,9 +1,19 @@
 // import Data from '../../components/datas/data'
 import './home.scss'
 
-const Home =({Data})=>{
-    return(
-        <h1>Home Page</h1>
+const Home =({ Data })=>{
+    const store = [...Data];
+    return (
+        <div>
+            {store.map(({category})=>{
+                return(
+                    <div>
+                        <h3>{category[1]===category[2]?category[1]:category[2]}</h3>
+                    </div>
+                )
+            })
+            }
+        </div>
     )
     
 }
