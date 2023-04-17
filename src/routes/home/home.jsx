@@ -2,18 +2,24 @@
 import './home.scss'
 import FilterContainer from '../../components/FilterContainer/FilterContainer';
 
+
 const Home =({ Data })=>{
     const store = [...Data];
     return (
-        <div>
+        <div >
             <FilterContainer/>
-            {store.map(({category})=>{
+            <div className='container-home'>
+            {store.map(({category, images})=>{
                 return(
-                    <div>
+                    <div className='card-home'>
                         <h3>{category}</h3>
+                        <div className='img-background' style={{backgroundImage: `url(${images[0]})`}}>
+                        </div>
                     </div>
                 )
             })}
+            </div>
+            
                     
                     
         </div>
