@@ -1,10 +1,12 @@
 // import Data from '../../components/datas/data'
 import './home.scss'
+import FilterContainer from '../../components/FilterContainer/FilterContainer';
 
 const Home =({ Data })=>{
     const store = [...Data];
     return (
         <div>
+            <FilterContainer/>
             {store.map(({category})=>{
                 return(
                     <div>

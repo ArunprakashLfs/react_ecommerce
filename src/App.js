@@ -6,6 +6,7 @@ import Home from './routes/home/home';
 import Shop from './routes/shop/shop';
 import Cart from './routes/cart/cart';
 import User from './routes/user/user';
+// import FilterContainer from './components/FilterContainer/FilterContainer';
 
 import Data from './components/datas/data'
 function App() {
