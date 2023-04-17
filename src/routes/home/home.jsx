@@ -8,7 +8,7 @@ const Home =({ Data })=>{
             {store.map(({category})=>{
                 return(
                     <div>
-                        <h3>{category[1]===category[2]?category[1]:category[2]}</h3>
+                        <h3>{category}</h3>
                     </div>
                 )
             })
