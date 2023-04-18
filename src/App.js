@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Navbar from './routes/Navbar/Navbar';
 import { Outlet } from 'react-router-dom';
+// import { Routes, Route } from 'react-router-dom';
 import Home from './routes/home/home';
 import Shop from './routes/shop/shop';
 import Cart from './routes/cart/cart';
@@ -15,7 +16,7 @@ function App() {
       <Route path='/'
       element={<><Navbar/> <Outlet/></>}> 
       <Route index
-      element={<Home Data={Data}/>}></Route>
+      element={<Home />}></Route>
       <Route path='/shop' element={<Shop Data={Data}/>}></Route>
       <Route path='/user' element={<User/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>

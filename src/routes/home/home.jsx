@@ -1,9 +1,11 @@
 // import Data from '../../components/datas/data'
 import './home.scss'
-import FilterContainer from '../../components/FilterContainer/FilterContainer';
+// import FilterContainer from '../../components/FilterContainer/FilterContainer';
+import Footer from '../../components/footer/footer';
+import Banner from '../../components/Banner/Banner';
 
 
-const Home =({ Data })=>{
+const Home =()=>{
     const store = [
         {
             "id": 1,
@@ -118,18 +120,23 @@ const Home =({ Data })=>{
     ];
     return (
         <div >
-            <FilterContainer/>
+            <Banner store={store}/>
             <div className='container-home'>
-            {store.map(({category, images})=>{
+            {store.map(({category, images, brand})=>{
                 return(
                     <div className='card-home'>
+                        <div className='brand' >
                         <h3>{category}</h3>
+                        <h4>{brand}</h4>
+                        </div>
                         <div className='img-background' style={{backgroundImage: `url(${images[0]})`}}>
                         </div>
                     </div>
                 )
             })}
+            
             </div>
+            <Footer/>
             
                     
                     

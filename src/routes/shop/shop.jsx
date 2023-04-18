@@ -1,10 +1,10 @@
 import './shop.scss'
-import FilterContainer from '../../components/FilterContainer/FilterContainer';
+// import FilterContainer from '../../components/FilterContainer/FilterContainer';
 const Shop =({Data})=>{
     const data = [...Data];
     return(
         <>
-        <FilterContainer/>
+        {/* <FilterContainer/> */}
         <div className="container">
             {data.map(({title, brand, images, price, rating, description})=>{
                 return(
