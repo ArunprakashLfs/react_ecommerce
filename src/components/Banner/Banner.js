@@ -2,13 +2,18 @@ import './banner.scss'
 const Banner=({store})=>{
     let data = [...store]
     return(
-        data.map(({images, brand})=>{
+        <div className="banner">
+             {data.map(({images, brand})=>{
             return(
-                <div className="banner">
-                    <img className='banner-img' src={images[0]} alt={brand}></img>
+                <div className='banner-img'>
+                    <div className='banner-img-container'>
+                        <img className='img-banner' src={images[1]} alt={brand}></img>
+                    </div>
                 </div>
             )
-        })
+        })}
+        </div>
+       
         
     )
 }
