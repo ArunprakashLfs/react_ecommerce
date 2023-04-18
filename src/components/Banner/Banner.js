@@ -16,12 +16,12 @@ const Banner=({store})=>{
     console.log(currentSlide)
     return(
         <div className="banner">
-             {data.map(({images, brand})=>{
+             {data.map(({images, brand, id})=>{
             return(
-                <div className='banner-img' style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
+                <div className='banner-img' style={{transform: `translateX(-${currentSlide * 100}vw)`  }}>
                     <div>
                         <div className='banner-img-container'>
-                            <img className='img-banner' src={images[0]} alt={brand}></img>
+                            <img className='img-banner' key={id} src={images[0]} alt={brand}></img>
                         </div>
                         <div className='Arrowcontainer'>
                             <div onClick={prevSlide} className='arrow' >
