@@ -9,6 +9,10 @@
     .content{
         display: flex;
         justify-content: space-between;
+        .icons{
+            display: flex;
+            gap: 1rem;
+        }
     }
 
 }
