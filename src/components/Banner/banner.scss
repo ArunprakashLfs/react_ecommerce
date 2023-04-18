@@ -1,10 +1,12 @@
 .banner{
     width: 100%;
     display: flex;
+    overflow-x: hidden;
     flex-direction: row;
     .banner-img{
         width: 600vw;
         height: auto;
+        display: flex;
         .banner-img-container{
             width: 100vw;
             height: 420px;
