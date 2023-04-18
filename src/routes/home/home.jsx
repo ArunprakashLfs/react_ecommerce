@@ -121,6 +121,9 @@ const Home =()=>{
     return (
         <div >
             <Banner store={store}/>
+            <div className='heading'>
+              <h1>Shopping Everyday</h1>
+            </div>
             <div className='container-home'>
             {store.map(({category, images, brand})=>{
                 return(
