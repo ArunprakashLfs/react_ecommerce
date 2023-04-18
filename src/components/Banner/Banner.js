@@ -9,6 +9,11 @@ const Banner=({store})=>{
                     <div className='banner-img-container'>
                         <img className='img-banner' src={images[1]} alt={brand}></img>
                     </div>
+                    <div>
+                        <div>
+                        AiOutlineArrowLeft
+                        </div>
+                    </div>
                 </div>
             )
         })}
