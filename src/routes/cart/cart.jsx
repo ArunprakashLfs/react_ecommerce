@@ -4,7 +4,11 @@ const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
     console.log(Data);
     return (
-        <h2>Cart</h2>
+        <div>
+            
+            <h2>Shopping cart</h2>
+            
+        </div>
     )
 }
 export default Cart;
