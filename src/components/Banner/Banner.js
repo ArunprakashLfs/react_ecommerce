@@ -6,19 +6,19 @@ const Banner=({store})=>{
     let data = [...store]
 
     //function for sliding
-    const [currentSlide,setCurrentSlide] = useState(0)
+    const [currentSlide,setCurrentSlide] = useState(1)
     const prevSlide =()=>{
-        setCurrentSlide(currentSlide === 0 ? 5:(prev)=>prev-1)
+        setCurrentSlide(currentSlide === 1 ? 5:(prev)=>prev - 1)
     }
     const nextSlide =()=>{
-        setCurrentSlide(currentSlide === 5 ? 0:(prev)=>prev+1)
+        setCurrentSlide(currentSlide === 5 ? 1:(prev)=>prev + 1)
     };
     console.log(currentSlide)
     return(
         <div className="banner">
-             {data.map(({images, brand})=>{
+             {data.map(({images, brand, id})=>{
             return(
-                <div className='banner-img' style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
+                <div className='banner-img' key ={id} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
                     <div>
                         <div className='banner-img-container'>
                             <img className='img-banner' src={images[0]} alt={brand}></img>

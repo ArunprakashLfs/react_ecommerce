@@ -6,9 +6,9 @@ const Shop =({Data})=>{
         <>
         {/* <FilterContainer/> */}
         <div className="container">
-            {data.map(({title, brand, images, price, rating, description})=>{
+            {data.map(({title, brand, images, price, rating, id})=>{
                 return(
-                   <div className="card">
+                   <div className="card" key={id}>
                     <div className='background-image' >
                         <img  className='img' src={images[0]} alt={title}/>
                     </div>
