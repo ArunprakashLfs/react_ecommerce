@@ -1,6 +1,7 @@
 import { useDispatch } from 'react-redux';
 import './shop.scss'
 import { AddtoCart } from '../../redux/slice';
+import { ToastContainer, toast } from 'react-toastify';
 // import { useState } from 'react';
 // import FilterContainer from '../../components/FilterContainer/FilterContainer';
 const Shop =({Data})=>{
@@ -30,7 +31,10 @@ const Shop =({Data})=>{
                                 price:val.price,
                                 quantity: val.quantity = 1, 
                                 rating:val.rating,
-                            }))}>Add To Cart</button>
+                            })
+                            ) &toast.success(`${val.brand} is added`)
+
+                            }>Add To Cart</button>
                             {/* <p className='addtocart'>Quantity<button onClick={()=>setBaseQty(baseQty=== 1? (baseQty = 1):baseQty - 1 )}>-</button>{baseQty}<button onClick={()=>setBaseQty(baseQty + 1)}>+</button></p> */}
 
                         </div>
@@ -41,9 +45,22 @@ const Shop =({Data})=>{
 
                         
                     </div>
+                   
                    </div>
                 )
             })}
+             <ToastContainer
+                    position='top-left'
+                    autoClose={2000}
+                    hideProgressBar={false}
+                    newestOnTop={false}
+                    closeOnClick
+                    rtl={false}
+                    pauseOnFocusLoss
+                    draggable
+                    pauseOnHover
+                    theme='dark'
+                    />
         </div>
         </>
     )
