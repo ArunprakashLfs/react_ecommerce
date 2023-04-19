@@ -1,17 +1,82 @@
-.cart-main{
-    display: flex;
-    flex-direction: column;
-    .cart-container{
+.main{
+    // font-size: 16px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    .cart-main{
         display: flex;
-        flex-direction: row;
-        height: 80px;
-        .cart-img-containder{
+        flex-direction: column;
+        .cart-container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 12rem;
             width: 100%;
-            height: auto;
-            .cart-img{
-                width: 100px;
-                height: 60px;
+    
+            .cart-items{
+                border: 1px solid rgb(59, 197, 59);
+                font-size: 16px;
+                font-weight: 500;
+                width: 100%;
+                height: 10rem;
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+                // gap: 1rem;
+                img{
+                    width: 8rem;
+                    height: 8rem;
+                    object-fit: cover;
+                }
+                .cart-content{
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: space-between;
+                    gap: 1rem;
+                }
+                .addtocart{
+                    border: 1px solid #222;
+                    background-color: #000;
+                    color: #fff;
+                    padding: 8px;
+                }
             }
+        }
+        .remove{
+            background-color: #222;
+            color: #fff;
+            padding: 5px;
+            border-radius: 50%;
+            cursor: pointer;
+            :hover{
+                transform: scaleX(12px);
+            }
+            .increment{
+                background-color: green;
+                color: green;
+                cursor: pointer;
+            }
+            .decrement{
+                background-color: red;
+                color: #fff;
+                cursor: pointer;
+            }
+        }
+    }
+    .totalValue{
+        margin: 0 auto;
+        padding: 5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        .cart-button{
+            padding: 10px;
+            background-color: #000;
+            color: #fff;
+            cursor: pointer;
         }
     }
 }
