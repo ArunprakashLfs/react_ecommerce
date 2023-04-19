@@ -126,14 +126,15 @@ const Home =()=>{
               <strong> when online retailers and sellers of goods were a novelty. Today, there are innumerable virtual stores and malls on the internet selling all types of consumer goods.</strong>
             </div>
             <div className='container-home'>
-            {store.map(({category, images, brand})=>{
+            {store.map(({category, images, brand, id})=>{
                 return(
-                    <div className='card-home'>
+                    <div className='card-home' key={id}>
                         <div className='brand' >
                         <h3>{category}</h3>
                         <h4>{brand}</h4>
                         </div>
-                        <div className='img-background' style={{backgroundImage: `url(${images[0]})`}}>
+                        <div className='img-container'>
+                          <img className='img-background' src={images[0]} alt={brand}/>
                         </div>
                     </div>
                 )
