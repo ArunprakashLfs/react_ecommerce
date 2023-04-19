@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { useState } from "react";
+import './cart.scss';
 
 const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
@@ -8,14 +9,14 @@ const Cart =()=>{
     let [baseQty, setBaseQty] = useState(1);
     return (
         
-        <div>
+        <div className="cart-main">
             
             <h2>Shopping cart</h2>
             {cartData.map((val)=>{
                 return(
-                    <div>
-                        <div>
-                        <img src={val.images[0]} alt="img" />
+                    <div className="cart-container">
+                        <div className="cart-img-container">
+                        <img className="cart-img" src={val.images[0]} alt="img" />
                         </div>
                         <div>
                             <p>{val.price}</p>
