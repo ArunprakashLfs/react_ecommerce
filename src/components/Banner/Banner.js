@@ -18,11 +18,7 @@ const Banner=({store})=>{
         <div className="banner">
              {data.map(({images, brand, id})=>{
             return(
-<<<<<<< HEAD
-                <div className='banner-img' style={{transform: `translateX(-${currentSlide * 100}vw)`  }}>
-=======
                 <div className='banner-img' key ={id} style={{transform: `translateX(-${currentSlide * 100}vw)`}}>
->>>>>>> 5ee937eacd6c0087b32437302b96405eddad7ae2
                     <div>
                         <div className='banner-img-container'>
                             <img className='img-banner' key={id} src={images[0]} alt={brand}></img>
