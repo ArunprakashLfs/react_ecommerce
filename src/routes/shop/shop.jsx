@@ -49,7 +49,7 @@ const Shop =({Data})=>{
                    </div>
                 )
             })}
-             <ToastContainer
+                <ToastContainer
                     position='top-left'
                     autoClose={2000}
                     hideProgressBar={false}
@@ -60,7 +60,7 @@ const Shop =({Data})=>{
                     draggable
                     pauseOnHover
                     theme='dark'
-                    />
+                />
         </div>
         </>
     )
