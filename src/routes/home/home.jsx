@@ -133,7 +133,8 @@ const Home =()=>{
                         <h3>{category}</h3>
                         <h4>{brand}</h4>
                         </div>
-                        <div className='img-background' style={{backgroundImage: `url(${images[0]})`}}>
+                        <div className='img-container'>
+                          <img className='img-background' src={images[0]} alt={brand}/>
                         </div>
                     </div>
                 )
