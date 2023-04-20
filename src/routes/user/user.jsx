@@ -28,7 +28,7 @@ const User = ()=>{
                     <button className="signout">Sign Out</button>
                 </div>
                 <div className="userlogin">
-                    <button className="linkedin"><i class="fa-brands fa-linkedin-in"></i>Login with LinkedIn</button>
+                    <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button>
                 </div>
             </div>
