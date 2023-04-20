@@ -7,8 +7,10 @@ import {
     signInWithPopup,
     signOut,
 } from 'firebase/auth';
+import { useDispatch } from "react-redux";
 
 const User = ()=>{
+    const dispatch = useDispatch();
     const auth = getAuth()
     const provider = new GoogleAuthProvider();
     const handlegoogleLogin = (e)=>{
