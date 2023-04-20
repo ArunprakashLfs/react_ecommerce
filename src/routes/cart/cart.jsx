@@ -23,6 +23,7 @@ const Cart =()=>{
     const handleCheckout =()=>{
         if(userInfo){
             setPaynow(true)
+            toast.success('select payment')
         }else{
             toast.error("login to continue")
         }
