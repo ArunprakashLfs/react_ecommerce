@@ -47,10 +47,10 @@ export const slice= createSlice({
         addUser: (state, action) =>{
             state.userInfo = action.payload;
         },
-        deleteUser:(state, action) => {
+        removeUser:(state) => {
             state.userInfo = null;
         }
     }
 })
-export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,deleteUser} = slice.actions;
+export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser} = slice.actions;
 export default slice.reducer;

@@ -9,6 +9,7 @@ import {
 } from 'firebase/auth';
 import { useDispatch } from "react-redux";
 import { addUser } from "../../redux/slice";
+import { removeUser } from "../../redux/slice";
 import { useNavigate } from "react-router-dom";
 
 const User = ()=>{
@@ -27,10 +28,10 @@ const User = ()=>{
                 name: user.displayName,
                 email:user.displayName,
                 image: user.photoURL,
-            }))
-            setTimeout(()=>{
+            }),setTimeout(()=>{
                 navigate('/')
-            },1500)
+            }),1500)
+            
         }).catch((error)=>{
             console.log(error);
         })
@@ -39,6 +40,7 @@ const User = ()=>{
         signOut(auth)
         .then(()=>{
             toast.success("Logout Successfully!");
+            dispatch(removeUser());
         })
         .catch((error)=>{
             console.log(error);

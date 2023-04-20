@@ -6,7 +6,9 @@ import Logo from '../../assets/shopee-logo-40480.png'
 
 const Navbar = () =>{
     const Data = useSelector((state)=>state.nithin.Data);
+    const userInfo = useSelector((state)=>state.nithin.userInfo)
     console.log(Data);
+    console.log(userInfo);
     return(
         <nav className="navbar-container">
             <div className="brand-container">
@@ -17,7 +19,10 @@ const Navbar = () =>{
                 <Link to={'/shop'} className="link">Shop</Link>
                 <Link to={'/user'} className="link">User</Link>
                 <Link to={'/cart'} className="link"><BsCart/>{Data.length}</Link>
-            </div>
+                {
+                    userInfo && <p style={{color:'#fff'}}>{userInfo.name}</p>
+                }
+            </div> 
         </nav>
     )
 }
