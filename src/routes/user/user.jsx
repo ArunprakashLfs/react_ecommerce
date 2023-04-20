@@ -4,7 +4,7 @@ import {
     GoogleAuthProvider,
     getAuth,
     signInWithPopup,
-    SignOut
+    signOut,
 } from 'firebase/auth';
 
 const User = ()=>{
@@ -15,7 +15,8 @@ const User = ()=>{
         console.log(auth);
         signInWithPopup(auth, provider).then((result)=>{
             const user = result.user;
-        }).catch((error) => {
+            console.log(user);
+        }).catch((error)=>{
             console.log(error);
         })
     }
