@@ -8,9 +8,12 @@ import {
     signOut,
 } from 'firebase/auth';
 import { useDispatch } from "react-redux";
+import { addUser } from "../../redux/slice";
+import { useNavigate } from "react-router-dom";
 
 const User = ()=>{
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const auth = getAuth()
     const provider = new GoogleAuthProvider();
     const handlegoogleLogin = (e)=>{
@@ -18,7 +21,16 @@ const User = ()=>{
         console.log(auth);
         signInWithPopup(auth, provider).then((result)=>{
             const user = result.user;
-            console.log(user);
+            // console.log(user);
+            dispatch(addUser({
+                id: user.uid,
+                name: user.displayName,
+                email:user.displayName,
+                image: user.photoURL,
+            }))
+            setTimeout(()=>{
+                navigate('/')
+            },1500)
         }).catch((error)=>{
             console.log(error);
         })
