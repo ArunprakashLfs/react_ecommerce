@@ -23,7 +23,7 @@ const Shop =({Data})=>{
                             <h3>{val.title}</h3>
                             <h4>{val.brand}</h4>
                             <p><strong>${val.price}</strong></p>
-                            <button onClick={()=>dispactch(AddtoCart({
+                            <button className ='shop-btn'onClick={()=>dispactch(AddtoCart({
                                 id: val.id,
                                 title:val.title,
                                 brand:val.brand, 
