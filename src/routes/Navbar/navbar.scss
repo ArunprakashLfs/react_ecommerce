@@ -1,6 +1,6 @@
 .navbar-container{
     max-width: 100%;
-    background-color: #393646;
+    background-color: #111;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -8,7 +8,7 @@
     font-weight: 500;
     .brand-container{
         font-size: 1rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
 
         .link{
             text-decoration: none;
@@ -17,7 +17,7 @@
     }
     .shop-container{
         font-size: 1rem;
-        text-transform: uppercase;
+        text-transform: capitalize;
         display: flex;
         gap: 10px;
         justify-content: space-between;
