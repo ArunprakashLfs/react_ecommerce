@@ -23,6 +23,12 @@
                 align-items: center;
                 justify-content: space-between;
                 // gap: 1rem;
+                .remove{
+                    padding: 8px;
+                    background-color: red;
+                    border-radius: 60%;
+                    cursor: pointer;
+                }
                 img{
                     width: 8rem;
                     height: 8rem;
@@ -36,32 +42,24 @@
                     gap: 1rem;
                 }
                 .addtocart{
+                    display: flex;
+                    gap: 5px;
                     border: 1px solid #222;
-                    background-color: #000;
-                    color: #fff;
+                    // background-color: #000;
+                    // color: #fff;
                     padding: 8px;
+                    // cursor: pointer;
+                    .increment{
+                        cursor: pointer;
+                    }
+                    .decrement{
+                        cursor: pointer;
+                        
+                    }
                 }
             }
         }
-        .remove{
-            background-color: #222;
-            color: #fff;
-            padding: 5px;
-            border-radius: 50%;
-            cursor: pointer;
-            :hover{
-                transform: scaleX(12px);
-            }
-            .increment{
-                background-color: green;
-                color: green;
-                cursor: pointer;
-            }
-            .decrement{
-                background-color: red;
-                color: #fff;
-                cursor: pointer;
-            }
+        
         }
     }
     .totalValue{
@@ -79,4 +77,3 @@
             cursor: pointer;
         }
     }
-}

@@ -62,7 +62,7 @@ const Cart =()=>{
                 )
                 
             })}
-        <button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>REset</button>
+        <button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>
         </div>
 
         <div className="totalValue">

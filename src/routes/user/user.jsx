@@ -1,9 +1,23 @@
 import Footer from "../../components/footer/footer";
 import './user.scss';
+import {
+    GoogleAuthProvider,
+    getAuth,
+    signInWithPopup,
+    SignOut
+} from 'firebase/auth';
 
 const User = ()=>{
-    const handlegoogleLogin = ()=>{
-
+    const auth = getAuth()
+    const provider = new GoogleAuthProvider();
+    const handlegoogleLogin = (e)=>{
+        e.preventDefault();
+        console.log(auth);
+        signInWithPopup(auth, provider).then((result)=>{
+            const user = result.user;
+        }).catch((error) => {
+            console.log(error);
+        })
     }
     return(
         <div >
