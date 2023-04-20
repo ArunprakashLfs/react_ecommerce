@@ -28,9 +28,10 @@ const User = ()=>{
                 name: user.displayName,
                 email:user.displayName,
                 image: user.photoURL,
-            }),setTimeout(()=>{
+            })
+            );setTimeout(()=>{
                 navigate('/')
-            }),1500)
+            },1500)
             
         }).catch((error)=>{
             console.log(error);

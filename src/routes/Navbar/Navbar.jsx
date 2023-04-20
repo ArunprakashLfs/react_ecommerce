@@ -20,7 +20,7 @@ const Navbar = () =>{
                 <Link to={'/user'} className="link">User</Link>
                 <Link to={'/cart'} className="link"><BsCart/>{Data.length}</Link>
                 {
-                    userInfo && <p style={{color:'#fff'}}>{userInfo.name}</p>
+                    userInfo && <span style={{color:'#fff'}}>{userInfo.name}</span>
                 }
             </div> 
         </nav>
