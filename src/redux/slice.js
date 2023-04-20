@@ -43,7 +43,14 @@ export const slice= createSlice({
                 item.quantity--
             }
         },
+        //user-state
+        addUser: (state, action) =>{
+            state.userInfo = action.payload;
+        },
+        deleteUser:(state, action) => {
+            state.userInfo = null;
+        }
     }
 })
-export const {AddtoCart,deleteFromCart,resetCart,increment,decrement} = slice.actions;
+export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,deleteUser} = slice.actions;
 export default slice.reducer;
