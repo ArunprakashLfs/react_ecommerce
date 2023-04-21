@@ -6,10 +6,12 @@ import {
     getAuth,
     signInWithPopup,
     signOut,
+    createUserWithEmailAndPassword,
 } from 'firebase/auth';
 import { useDispatch } from "react-redux";
 import { addUser } from "../../redux/slice";
 import { removeUser } from "../../redux/slice";
+import { addUserWithEmail } from '../../redux/slice'
 import { useNavigate } from "react-router-dom";
 
 const User = ()=>{
@@ -17,6 +19,24 @@ const User = ()=>{
     const navigate = useNavigate();
     const auth = getAuth()
     const provider = new GoogleAuthProvider();
+    const email = createUserWithEmailAndPassword();
+    const password = createUserWithEmailAndPassword();
+    const HandleEmailLogin = (e)=>{
+        e.preventDefault();
+        createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            const user = userCredential.user;
+            dispatch(adduserWithEmail({
+                email:user.email,
+                name:user.displayName,
+                password:user.displayName,
+            }))
+
+  })
+  .catch((error) => {
+   console.log(error);
+  });
+    }
     const handlegoogleLogin = (e)=>{
         e.preventDefault();
         console.log(auth);
@@ -65,7 +85,7 @@ const User = ()=>{
                         <input type="text" name="email"/>
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password"/>
-                        <button>Login</button>
+                        <button onClick={HandleEmailLogin}>Login</button>
                     </form>
                 </div>
             </div>

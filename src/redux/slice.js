@@ -46,6 +46,9 @@ export const slice= createSlice({
             }
         },
         //user-state
+        addUserWithEmail:(state, action)=>{
+            state.userInfo = action.payload;
+        },
         addUser: (state, action) =>{
             state.userInfo = action.payload;
         },
@@ -58,5 +61,5 @@ export const slice= createSlice({
         }
     }
 })
-export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser} = slice.actions;
+export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser,addUserWithEmail} = slice.actions;
 export default slice.reducer;
