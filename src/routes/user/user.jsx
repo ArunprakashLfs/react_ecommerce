@@ -55,10 +55,12 @@ const User = ()=>{
                     <button onClick={handlegoogleLogin} className="google"><i class="fa-brands fa-google"></i>Login With Google</button>
                     <button onClick={handleSignOut} className="signout">Sign Out</button>
                 </div>
-                <div className="userlogin">
-                    <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
-                    <button className="signout">SignOut</button>
-                </div>
+                <form className="userlogin">
+                    {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
+                    <button className="signout">SignOut</button> */}
+                    <input type="text" />
+
+                </form>
             </div>
             <Footer/>
             <ToastContainer
