@@ -22,11 +22,12 @@ const Navbar = () =>{
                 <Link to={'/shop'} className="link">Shop</Link>
                 <Link to={'/user'} className="link">User</Link>
                 <Link to={'/cart'} className="link"><BsCart/>{Data.length}</Link>
-                <div>
-                <img className='img-logo' src={User} alt="logo"/>
+                <div className="img-google">
                 {
                     userInfo && <span style={{color:'#fff'}}>{userInfo.name}</span>
                 }
+                <img className='img-logo' src={userInfo?userInfo.image:User} alt="logo"/>
+                
                 </div>
                 
             </div> 
