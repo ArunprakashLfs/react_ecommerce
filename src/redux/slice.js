@@ -48,7 +48,11 @@ export const slice= createSlice({
             state.userInfo = action.payload;
         },
         removeUser:(state) => {
-            state.userInfo = null;
+            if(state){
+                state.userInfo = null;
+            }else{
+                
+            }
         }
     }
 })

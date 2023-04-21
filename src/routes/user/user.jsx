@@ -40,8 +40,8 @@ const User = ()=>{
     const handleSignOut = ()=>{
         signOut(auth)
         .then(()=>{
-            toast.success("Logout Successfully!");
             dispatch(removeUser());
+            toast.success("Logout Successfully!");
         })
         .catch((error)=>{
             console.log(error);
