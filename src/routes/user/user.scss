@@ -9,40 +9,43 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-}
-.userlogin{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    .form{
+    .userlogin{
+        // width: 100%;
+        // height: 100%;
         display: flex;
-        flex-direction: column;
+        // flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        .form{
+            display: flex;
+            flex-direction: column;
+        }
     }
-}
-.googlelogin{
-    display: flex;
-    gap: 1rem;
-    button{
-        padding: 10px;
-        border-radius: 3px;
-        
-    }
-    .google{
-        background-color: #1627c0;
-        color: #fff;
+    .googlelogin{
         display: flex;
         gap: 1rem;
+        button{
+            padding: 10px;
+            border-radius: 3px;
+            
+        }
+        .google{
+            background-color: #1627c0;
+            color: #fff;
+            display: flex;
+            gap: 1rem;
+        }
+        .linkedin{
+            background-color: #111;
+            color: #fff;
+            display: flex;
+            gap: 1rem;
+        }
+        .signout{
+            background-color: #333;
+            color: #fff;
+    
+        }
     }
-    .linkedin{
-        background-color: #111;
-        color: #fff;
-        display: flex;
-        gap: 1rem;
-    }
-    .signout{
-        background-color: #333;
-        color: #fff;
+}
 
-    }
-}

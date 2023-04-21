@@ -60,12 +60,12 @@ const User = ()=>{
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
                         <label htmlFor="name">Enter Name</label>
-                        <input type="text" />
-                        <label htmlFor="name">Enter Email</label>
-                        <input type="text" />
-                        <label htmlFor="name">Enter password</label>
-                        <input type="number" />
-
+                        <input type="text"  name="name"/>
+                        <label htmlFor="email">Enter Email</label>
+                        <input type="text" name="email"/>
+                        <label htmlFor="password">Enter password</label>
+                        <input type="number" name="password"/>
+                        <button>Login</button>
                     </form>
                 </div>
             </div>
