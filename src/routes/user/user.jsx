@@ -51,16 +51,23 @@ const User = ()=>{
         <div >
             {/* <h2>User Page</h2> */}
             <div className="Userpage">
-                <div className="userlogin">
+                <div className="googlelogin">
                     <button onClick={handlegoogleLogin} className="google"><i class="fa-brands fa-google"></i>Login With Google</button>
                     <button onClick={handleSignOut} className="signout">Sign Out</button>
                 </div>
-                <form className="userlogin">
-                    {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
+                <div className="userlogin">
+                    <form className="form">
+                        {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
-                    <input type="text" />
+                        <label htmlFor="name">Enter Name</label>
+                        <input type="text" />
+                        <label htmlFor="name">Enter Email</label>
+                        <input type="text" />
+                        <label htmlFor="name">Enter password</label>
+                        <input type="number" />
 
-                </form>
+                    </form>
+                </div>
             </div>
             <Footer/>
             <ToastContainer
