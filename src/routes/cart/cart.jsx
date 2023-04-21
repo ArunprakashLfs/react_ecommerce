@@ -21,12 +21,17 @@ const Cart =()=>{
         setTotalAmount(price);
     }, [cartData])
     const handleCheckout =()=>{
+       if(totalAmount===0){
+        toast.error("Add cart items to continue")
+       }else{
+        
         if(userInfo){
             setPaynow(true)
             toast.success('select payment')
         }else{
             toast.error("login to continue")
         }
+       }
     }
     return (
         <div className="main"> 
