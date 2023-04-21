@@ -39,7 +39,9 @@ export const slice= createSlice({
             const item = state.Data.find(
                 (item) => item.id === action.payload.id
             );
-            if(item){
+            if(item.quantity===0){
+                deleteFromCart(item.id)
+            }else{
                 item.quantity--
             }
         },
