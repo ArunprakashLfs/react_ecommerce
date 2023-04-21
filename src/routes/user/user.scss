@@ -1,11 +1,12 @@
 .Userpage{
     width: 100vw;
     height: 80vh;
-    display: grid;
-    grid-template-rows: 1 1;
-    // display: flex;
-    // gap: 1rem;
-    // flex-direction: row;
+    // display: grid;
+    // grid-template-rows: 1 1;
+    display: flex;
+    flex: 1 1;
+    gap: 1rem;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
 }
