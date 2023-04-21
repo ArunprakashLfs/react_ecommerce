@@ -26,8 +26,8 @@ const User = ()=>{
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            dispatch(adduserWithEmail({
-                email:user.email,
+            dispatch(addUserWithEmail({
+                email:user.displayName,
                 name:user.displayName,
                 password:user.displayName,
             }))
