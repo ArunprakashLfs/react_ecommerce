@@ -40,7 +40,7 @@ export const slice= createSlice({
                 (item) => item.id === action.payload.id
             );
             if(item.quantity===0){
-                deleteFromCart()
+                deleteFromCart(item.id)
             }else{
                 item.quantity--
             }

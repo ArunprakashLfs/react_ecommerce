@@ -9,7 +9,7 @@ const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
     const userInfo = useSelector((state)=>state.nithin.userInfo);
     let cartData =[...Data];
-    const [payNow, setPaynow] = useState(false);
+    // const [payNow, setPaynow] = useState(false);
     const dispatch = useDispatch();
     let [totalAmount, setTotalAmount] = useState('');
     useEffect(()=>{
@@ -26,7 +26,7 @@ const Cart =()=>{
        }else{
         
         if(userInfo){
-            setPaynow(true)
+            // setPaynow(true)
             toast.success('select payment')
         }else{
             toast.error("login to continue")
