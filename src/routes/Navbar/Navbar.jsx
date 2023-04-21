@@ -12,8 +12,10 @@ const Navbar = () =>{
     return(
         <nav className="navbar-container">
             <div className="brand-container">
+                
+                <Link to={'/'} className="link">Nithin Traders
                 <img className='img-logo' src={Logo} alt="img-logo"/>
-                <Link to={'/'} className="link">Nithin Traders</Link>
+                </Link>
             </div>
             <div className="shop-container">
                 <Link to={'/shop'} className="link">Shop</Link>
