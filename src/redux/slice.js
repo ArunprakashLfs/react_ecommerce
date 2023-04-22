@@ -39,11 +39,27 @@ export const slice= createSlice({
             const item = state.Data.find(
                 (item) => item.id === action.payload.id
             );
-            if(item){
+            if(item.quantity===0){
+                deleteFromCart(item.id)
+            }else{
                 item.quantity--
             }
         },
+        //user-state
+        addUserWithEmail:(state, action)=>{
+            state.userInfo = action.payload;
+        },
+        addUser: (state, action) =>{
+            state.userInfo = action.payload;
+        },
+        removeUser:(state) => {
+            if(state){
+                state.userInfo = null;
+            }else{
+                
+            }
+        }
     }
 })
-export const {AddtoCart,deleteFromCart,resetCart,increment,decrement} = slice.actions;
+export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser,addUserWithEmail} = slice.actions;
 export default slice.reducer;

@@ -7,7 +7,9 @@ import { ToastContainer, toast } from "react-toastify";
 
 const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
+    const userInfo = useSelector((state)=>state.nithin.userInfo);
     let cartData =[...Data];
+    // const [payNow, setPaynow] = useState(false);
     const dispatch = useDispatch();
     let [totalAmount, setTotalAmount] = useState('');
     useEffect(()=>{
@@ -18,6 +20,19 @@ const Cart =()=>{
         });
         setTotalAmount(price);
     }, [cartData])
+    const handleCheckout =()=>{
+       if(totalAmount===0){
+        toast.error("Add cart items to continue")
+       }else{
+        
+        if(userInfo){
+            // setPaynow(true)
+            toast.success('select payment')
+        }else{
+            toast.error("login to continue")
+        }
+       }
+    }
     return (
         <div className="main"> 
             <div className="cart-main">
@@ -62,14 +77,14 @@ const Cart =()=>{
                 )
                 
             })}
-        <button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>REset</button>
+        <button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>
         </div>
 
         <div className="totalValue">
                 <h3>Total Amount</h3>
                 <p><strong>Total: ${totalAmount}</strong></p>
                 {/* <p>Shipping:<span>{}</span></p> */}
-                <button className="cart-button">Proceed to cart</button>
+                <button onClick={handleCheckout} className="cart-button">Proceed to cart</button>
         </div>
         <ToastContainer
                     position='top-left'

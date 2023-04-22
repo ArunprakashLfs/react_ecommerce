@@ -3,7 +3,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 3rem;
+    margin-top: 1rem;
     h1{
         text-align: center;
         background-color: #4a4a4a;
@@ -14,6 +14,9 @@
     }
 }
 .container-home{
+    // display: flex;
+    // flex-wrap: wrap;
+    // flex: 1 1 1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: 0.5rem;
