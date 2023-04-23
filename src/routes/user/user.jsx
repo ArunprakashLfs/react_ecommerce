@@ -11,7 +11,7 @@ import {
 import { useDispatch } from "react-redux";
 import { addUser } from "../../redux/slice";
 import { removeUser } from "../../redux/slice";
-import { addUserWithEmail } from '../../redux/slice'
+// import { addUserWithEmail } from '../../redux/slice'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -33,11 +33,11 @@ const User = ()=>{
             const user = userCredential.user;
             toast.success("user created")
             console.log(user);
-            dispatch(addUserWithEmail({
-                email:user.email,
-                userName:user.displayName,
-                password:user.displayName,
-            }));
+            // dispatch(addUserWithEmail({
+            //     email:user.email,
+            //     userName:user.displayName,
+            //     password:user.displayName,
+            // }));
             setTimeout(() => {
                 navigate('/login')
             },3000);

@@ -53,7 +53,7 @@ export const slice= createSlice({
             state.userInfo = action.payload;
         },
         signinWithEmail:(state, action)=>{
-            state.userInfo.email =action.payload.email;
+            state.userInfo = action.payload;
         },
         removeUser:(state) => {
             if(state){

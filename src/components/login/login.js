@@ -31,14 +31,16 @@ const Login = ()=>{
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            toast.success("login successful")
-            navigate('/')
+            toast.success("login successful");
             console.log(user);
             dispatch(signinWithEmail({
                 email:user.email,
                 userName:user.displayName,
                 password:user.displayName,
-            }))
+            }));
+            setTimeout(() => {
+                navigate('/')
+            }, 1500);
 
   })
   .catch((error) => {
