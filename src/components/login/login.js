@@ -15,7 +15,7 @@ import { addUserWithEmail } from '../../redux/slice'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
-const User = ()=>{
+const Login = ()=>{
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('');
@@ -91,8 +91,8 @@ const User = ()=>{
                     <button className="signout">SignOut</button> */}
                         <h2>Login</h2>
                         <label htmlFor="name">Enter Name</label>
-                        <input type="text"  name="name" placeholder="Name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
-                        <label htmlFor="email">Enter Email</label>
+                        {/* <input type="text"  name="name" placeholder="Name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
+                        <label htmlFor="email">Enter Email</label> */}
                         <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
@@ -118,4 +118,4 @@ const User = ()=>{
         </div>
     )
 }
-export default User;
+export default Login;
