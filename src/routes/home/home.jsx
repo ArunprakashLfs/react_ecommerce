@@ -3,7 +3,7 @@ import './home.scss'
 // import FilterContainer from '../../components/FilterContainer/FilterContainer';
 import Footer from '../../components/footer/footer';
 // import { useDispatch } from 'react-redux';
-import Shop from '../shop/shop';
+// import Shop from '../shop/shop';
 // import Banner from '../../components/Banner/Banner';
 // import { categoryFilter } from '../../redux/slice';
 import { useNavigate } from 'react-router-dom';
@@ -125,9 +125,9 @@ const Home =()=>{
           ]
         },
     ];
-    const filterValue = (category)=>{
+    const filterValue = ()=>{
       navigate('/shop');
-      <Shop category={category} />
+      // <Shop category={category} />
     }
 
     return (
@@ -143,7 +143,7 @@ const Home =()=>{
                     <div className='card-home' key={id}>
                         <div className='brand' >
                         <h3 >{category}</h3>
-                        <button onClick={filterValue(category)}>Shop Now</button>
+                        <button onClick={filterValue}>Shop Now</button>
                         </div>
                         <div className='img-container'>
                           <img className='img-background' src={images[0]} alt={brand}/>
