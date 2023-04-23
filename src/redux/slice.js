@@ -10,10 +10,7 @@ export const slice= createSlice({
     name: 'NithinTraders',
     initialState,
     reducers:{
-        categoryFilter:(state, action)=>{
-            state.Data = state.Data.filter((item)=>item.category === action.payload);
-            
-        },
+
         AddtoCart:(state, action)=>{
             const item = state.Data.find((item)=>item.id === action.payload.id);
             if(item){

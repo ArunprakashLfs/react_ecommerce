@@ -2,12 +2,15 @@ import { useDispatch } from 'react-redux';
 import './shop.scss'
 import { AddtoCart } from '../../redux/slice';
 import { ToastContainer, toast } from 'react-toastify';
+// import { categoryFilter } from '../../redux/slice';
 // import { useState } from 'react';
 // import FilterContainer from '../../components/FilterContainer/FilterContainer';
 const Shop =({Data})=>{
     const data = [...Data];
     const dispactch = useDispatch();
-    // let [baseQty, setBaseQty] = useState(1);
+    // let [products, setProducts] = useState(data);
+
+    
     return(
         <>
         {/* <FilterContainer/> */}
