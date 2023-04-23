@@ -16,7 +16,6 @@ import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 const Login = ()=>{
-    const [userName, setUserName] = useState("");
     const [email, setEmail] = useState('');
     const [password, setpassword] = useState('');
     const dispatch = useDispatch();
@@ -28,7 +27,7 @@ const Login = ()=>{
     const registerUser = (e)=>{
         e.preventDefault();
         console.log(email, password);
-        createUserWithEmailAndPassword(auth, email, password, userName)
+        createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
             toast.success("user created")
@@ -72,6 +71,9 @@ const Login = ()=>{
         .then(()=>{
             dispatch(removeUser());
             toast.success("Logout Successfully!");
+            setTimeout(() => {
+                navigate('/user')
+            }, 1000);
         })
         .catch((error)=>{
             console.log(error);
@@ -96,8 +98,10 @@ const Login = ()=>{
                         <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-                        <button type="submit" className="signout">Register</button>
-                        <p>Already have an account?<span>Login</span></p>
+                        <button type="submit" className="signout">Login</button>
+                        <button className="signin">SignOut</button>
+                        <p>Don't have an account?<span onClick={()=>{navigate('/user')}}>signup</span></p>
+                        
                         
                     </form>
                 </div>

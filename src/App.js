@@ -10,6 +10,7 @@ import User from './routes/user/user';
 // import FilterContainer from './components/FilterContainer/FilterContainer';
 
 import Data from './components/datas/data'
+import Login from './components/login/login';
 function App() {
   return (
     <Routes>
@@ -20,6 +21,7 @@ function App() {
       <Route path='/shop' element={<Shop Data={Data}/>}></Route>
       <Route path='/user' element={<User/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
+      <Route path='/login' element={<Login/>}></Route>
       </Route>
     </Routes>
   );

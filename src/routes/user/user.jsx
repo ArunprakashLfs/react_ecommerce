@@ -37,7 +37,10 @@ const User = ()=>{
                 email:user.email,
                 userName:user.displayName,
                 password:user.displayName,
-            }))
+            }));
+            setTimeout(() => {
+                navigate('/login')
+            },3000);
 
   })
   .catch((error) => {
@@ -77,6 +80,9 @@ const User = ()=>{
             console.log(error);
         })
     }
+    const handleLogin = ()=>{
+        navigate('/login')
+    }
     return(
         <div >
             {/* <h2>User Page</h2> */}
@@ -97,7 +103,7 @@ const User = ()=>{
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                         <button type="submit" className="signout">Register</button>
-                        <p>Already have an account?<span>Login</span></p>
+                        <p>Already have an account?<span onClick={handleLogin}>Login</span></p>
                         
                     </form>
                 </div>
