@@ -13,23 +13,28 @@ import { addUser } from "../../redux/slice";
 import { removeUser } from "../../redux/slice";
 import { addUserWithEmail } from '../../redux/slice'
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 const User = ()=>{
+    const [userName, setUserName] = useState("");
+    const [email, setEmail] = useState('');
+    const [password, setpassword] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const auth = getAuth()
     const provider = new GoogleAuthProvider();
-    const email = createUserWithEmailAndPassword();
-    const password = createUserWithEmailAndPassword();
-    const HandleEmailLogin = (e)=>{
+    // const email = email;
+    // const password = create;
+    const registerUser = (e)=>{
         e.preventDefault();
-        createUserWithEmailAndPassword(auth, email, password)
+        console.log(email, password);
+        createUserWithEmailAndPassword(auth, email, password, userName)
         .then((userCredential) => {
             const user = userCredential.user;
             console.log(user);
             dispatch(addUserWithEmail({
                 email:user.displayName,
-                name:user.displayName,
+                userName:user.displayName,
                 password:user.displayName,
             }))
 
@@ -77,23 +82,23 @@ const User = ()=>{
                     <button onClick={handleSignOut} className="signout">Sign Out</button>
                 </div>
                 <div className="userlogin">
-                    <form className="form">
+                    <form className="form" onSubmit={registerUser}>
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
                         <label htmlFor="name">Enter Name</label>
-                        <input type="text"  name="name"/>
+                        <input type="text"  name="name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                         <label htmlFor="email">Enter Email</label>
-                        <input type="text" name="email"/>
+                        <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <label htmlFor="password">Enter password</label>
-                        <input type="number" name="password"/>
-                        <button onClick={HandleEmailLogin}>Login</button>
+                        <input type="number" name="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                        <button type="submit">Login</button>
                     </form>
                 </div>
             </div>
             <Footer/>
             <ToastContainer
-                    position='top-left'
-                    autoClose={2000}
+                    position='top-center'
+                    // autoClose={2000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick

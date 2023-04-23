@@ -26,7 +26,7 @@ const Navbar = () =>{
                 {
                     userInfo && <span style={{color:'#fff'}}>{userInfo.name}</span>
                 }
-                <img className='img-logo' src={userInfo?userInfo.image:User} alt="logo"/>
+                <img className='img-logo' src={userInfo?userInfo.image===null?User:userInfo.image:User} alt="logo"/>
                 
                 </div>
                 
