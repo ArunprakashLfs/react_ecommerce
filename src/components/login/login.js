@@ -1,6 +1,6 @@
 import { toast, ToastContainer } from "react-toastify";
-import Footer from "../../components/footer/footer";
-import './user.scss';
+import Footer from "../footer/footer";
+import '../../routes/user/user.scss';
 import {
     GoogleAuthProvider,
     getAuth,
@@ -89,7 +89,7 @@ const User = ()=>{
                     <form className="form" onSubmit={registerUser} >
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
-                        <h2>Register Here</h2>
+                        <h2>Login</h2>
                         <label htmlFor="name">Enter Name</label>
                         <input type="text"  name="name" placeholder="Name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                         <label htmlFor="email">Enter Email</label>

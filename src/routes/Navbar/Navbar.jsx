@@ -20,7 +20,7 @@ const Navbar = () =>{
             </div>
             <div className="shop-container">
                 <Link to={'/shop'} className="link">Shop</Link>
-                <Link to={'/user'} className="link">User</Link>
+                <Link to={'/user'} className="link">Register</Link>
                 <Link to={'/cart'} className="link"><BsCart/>{Data.length}</Link>
                 <div className="img-google">
                 {
