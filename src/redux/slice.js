@@ -52,6 +52,9 @@ export const slice= createSlice({
         addUser: (state, action) =>{
             state.userInfo = action.payload;
         },
+        signinWithEmail:(state, action)=>{
+            state.userInfo.email =action.payload.email;
+        },
         removeUser:(state) => {
             if(state){
                 state.userInfo = null;
@@ -61,5 +64,5 @@ export const slice= createSlice({
         }
     }
 })
-export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser,addUserWithEmail} = slice.actions;
+export const {AddtoCart,deleteFromCart,resetCart,increment,decrement,addUser,removeUser,addUserWithEmail,signinWithEmail} = slice.actions;
 export default slice.reducer;

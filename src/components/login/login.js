@@ -6,12 +6,13 @@ import {
     getAuth,
     signInWithPopup,
     signOut,
-    createUserWithEmailAndPassword,
+    // createUserWithEmailAndPassword,
+    signInWithEmailAndPassword
 } from 'firebase/auth';
 import { useDispatch } from "react-redux";
 import { addUser } from "../../redux/slice";
 import { removeUser } from "../../redux/slice";
-import { addUserWithEmail } from '../../redux/slice'
+import { signinWithEmail } from '../../redux/slice'
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -24,15 +25,16 @@ const Login = ()=>{
     const provider = new GoogleAuthProvider();
     // const email = email;
     // const password = create;
-    const registerUser = (e)=>{
+    const LoginUser = (e)=>{
         e.preventDefault();
         console.log(email, password);
-        createUserWithEmailAndPassword(auth, email, password)
+        signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             const user = userCredential.user;
-            toast.success("user created")
+            toast.success("login successful")
+            navigate('/')
             console.log(user);
-            dispatch(addUserWithEmail({
+            dispatch(signinWithEmail({
                 email:user.email,
                 userName:user.displayName,
                 password:user.displayName,
@@ -72,7 +74,7 @@ const Login = ()=>{
             dispatch(removeUser());
             toast.success("Logout Successfully!");
             setTimeout(() => {
-                navigate('/user')
+                navigate('/')
             }, 1000);
         })
         .catch((error)=>{
@@ -88,7 +90,7 @@ const Login = ()=>{
                     <button onClick={handleSignOut} className="signout">Sign Out</button>
                 </div>
                 <div className="userlogin">
-                    <form className="form" onSubmit={registerUser} >
+                    <form className="form" onSubmit={LoginUser} >
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
                         <h2>Login</h2>
@@ -99,7 +101,7 @@ const Login = ()=>{
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                         <button type="submit" className="signout">Login</button>
-                        <button className="signin">SignOut</button>
+                        <button className="signin" onClick={handleSignOut}>SignOut</button>
                         <p>Don't have an account?<span onClick={()=>{navigate('/user')}}>signup</span></p>
                         
                         
