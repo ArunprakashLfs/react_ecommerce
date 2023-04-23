@@ -31,6 +31,7 @@ const User = ()=>{
         createUserWithEmailAndPassword(auth, email, password, userName)
         .then((userCredential) => {
             const user = userCredential.user;
+            toast.success("user created")
             console.log(user);
             dispatch(addUserWithEmail({
                 email:user.displayName,
@@ -41,6 +42,7 @@ const User = ()=>{
   })
   .catch((error) => {
    console.log(error);
+   toast.error("oops some error")
   });
     }
     const handlegoogleLogin = (e)=>{
@@ -48,6 +50,7 @@ const User = ()=>{
         console.log(auth);
         signInWithPopup(auth, provider).then((result)=>{
             const user = result.user;
+            toast.success("Login with Google Successfully")
             // console.log(user);
             dispatch(addUser({
                 id: user.uid,
@@ -57,10 +60,11 @@ const User = ()=>{
             })
             );setTimeout(()=>{
                 navigate('/')
-            },1500)
+            },3000)
             
         }).catch((error)=>{
             console.log(error);
+            toast.error("oops some error ")
         })
     }
     const handleSignOut = ()=>{
@@ -85,6 +89,7 @@ const User = ()=>{
                     <form className="form" onSubmit={registerUser} >
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
+                        <h2>Register Here</h2>
                         <label htmlFor="name">Enter Name</label>
                         <input type="text"  name="name" placeholder="Name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                         <label htmlFor="email">Enter Email</label>
@@ -93,6 +98,7 @@ const User = ()=>{
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                         <button type="submit" className="signout">Register</button>
                         <p>Already have an account?<span>Login</span></p>
+                        
                     </form>
                 </div>
             </div>
