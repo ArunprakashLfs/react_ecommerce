@@ -2,10 +2,16 @@
 import './home.scss'
 // import FilterContainer from '../../components/FilterContainer/FilterContainer';
 import Footer from '../../components/footer/footer';
+import { useDispatch } from 'react-redux';
 // import Banner from '../../components/Banner/Banner';
+import { categoryFilter } from '../../redux/slice';
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Home =()=>{
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
     const store = [
         {
             "id": 1,
@@ -118,6 +124,7 @@ const Home =()=>{
           ]
         },
     ];
+
     return (
         <div >
             {/* <Banner store={store}/> */}
@@ -126,15 +133,15 @@ const Home =()=>{
               <strong> when online retailers and sellers of goods were a novelty. Today, there are innumerable virtual stores and malls on the internet selling all types of consumer goods.</strong>
             </div>
             <div className='container-home'>
-            {store.map(({category, images, brand, id})=>{
+            {store.map((val)=>{
                 return(
-                    <div className='card-home' key={id}>
+                    <div className='card-home' key={val.id}>
                         <div className='brand' >
-                        <h3>{category}</h3>
-                        <h4>{brand}</h4>
+                        <h3 >{val.category}</h3>
+                        <button onClick={()=>dispatch(categoryFilter({category: val.category}),navigate('/shop'))}>Shop Now</button>
                         </div>
                         <div className='img-container'>
-                          <img className='img-background' src={images[0]} alt={brand}/>
+                          <img className='img-background' src={val.images[0]} alt={val.brand}/>
                         </div>
                     </div>
                 )

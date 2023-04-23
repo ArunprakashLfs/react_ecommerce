@@ -11,6 +11,7 @@ import User from './routes/user/user';
 
 import Data from './components/datas/data'
 import Login from './components/login/login';
+import Check from './components/check';
 function App() {
   return (
     <Routes>
@@ -22,6 +23,7 @@ function App() {
       <Route path='/user' element={<User/>}></Route>
       <Route path='/cart' element={<Cart/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
+      <Route path='/check' element={<Check Data={Data}/>}></Route>
       </Route>
     </Routes>
   );
