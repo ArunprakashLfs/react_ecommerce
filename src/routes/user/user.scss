@@ -17,8 +17,35 @@
         align-items: center;
         justify-content: center;
         .form{
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
+            align-items: flex-start;
+            justify-content: space-between;
+            align-content: space-between;
+            gap: 1rem;
+            input{
+                padding: 10px 5px;
+            }
+            .signout{
+                margin: 0 auto;
+                background-color: #27d461;
+                color: #fff;
+                padding: 10px;
+                border-radius: 3px;
+                // border: none;
+                border: none;
+                // border-radius: 15px;
+                box-shadow: 0 0 8px rgb(207, 207, 207);
+                cursor: pointer;
+                &:hover{
+                    // transform: scaleX(10px);
+                    border: none;
+                    padding: 15px;
+                    border-radius: 15px;
+                    box-shadow: inset 0 0 8px #f9f8fc;
+                }
+            }
         }
     }
     .googlelogin{
@@ -27,6 +54,7 @@
         button{
             padding: 10px;
             border-radius: 3px;
+            cursor: pointer;
             
         }
         .google{
@@ -34,17 +62,22 @@
             color: #fff;
             display: flex;
             gap: 1rem;
-        }
-        .linkedin{
-            background-color: #111;
-            color: #fff;
-            display: flex;
-            gap: 1rem;
+            &:hover{
+                // position: absolute;
+                // scale: 5px;
+                color: #111;
+                background-color: #fec7d7;
+            }
         }
         .signout{
             background-color: #333;
             color: #fff;
-    
+            &:hover{
+                // position: absolute;
+                // scale: 5px;
+                background-color: #fec7d7;
+                color: #111;
+            }
         }
     }
 }

@@ -86,12 +86,12 @@ const User = ()=>{
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
                         <label htmlFor="name">Enter Name</label>
-                        <input type="text"  name="name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
+                        <input type="text"  name="name" placeholder="Name" value={userName} onChange={(e)=>setUserName(e.target.value)}/>
                         <label htmlFor="email">Enter Email</label>
-                        <input type="email" name="email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
+                        <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <label htmlFor="password">Enter password</label>
-                        <input type="number" name="password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-                        <button type="submit">Login</button>
+                        <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
+                        <button type="submit" className="signout">Login</button>
                     </form>
                 </div>
             </div>
