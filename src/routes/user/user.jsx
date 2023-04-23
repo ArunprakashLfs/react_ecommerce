@@ -82,7 +82,7 @@ const User = ()=>{
                     <button onClick={handleSignOut} className="signout">Sign Out</button>
                 </div>
                 <div className="userlogin">
-                    <form className="form" onSubmit={registerUser}>
+                    <form className="form" onSubmit={registerUser} >
                         {/* <button className="linkedin"><i class="fa-brands fa-github"></i>Login with GitHub</button>
                     <button className="signout">SignOut</button> */}
                         <label htmlFor="name">Enter Name</label>
@@ -91,7 +91,8 @@ const User = ()=>{
                         <input type="email" name="email" placeholder="Email" value={email} onChange={(e)=>setEmail(e.target.value)}/>
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
-                        <button type="submit" className="signout">Login</button>
+                        <button type="submit" className="signout">Register</button>
+                        <p>Already have an account?<span>Login</span></p>
                     </form>
                 </div>
             </div>
