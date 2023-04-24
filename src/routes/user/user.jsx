@@ -103,7 +103,7 @@ const User = ()=>{
                         <label htmlFor="password">Enter password</label>
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                         <button type="submit" className="signout">Register</button>
-                        <p>Already have an account?<span onClick={handleLogin}>Login</span></p>
+                        <p>Already have an account?<span style={{cursor: 'pointer'}} onClick={handleLogin}>Login</span></p>
                         
                     </form>
                 </div>

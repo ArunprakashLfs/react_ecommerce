@@ -104,7 +104,7 @@ const Login = ()=>{
                         <input type="number" name="password" placeholder="Password" value={password} onChange={(e)=>setpassword(e.target.value)}/>
                         <button type="submit" className="signout">Login</button>
                         <button className="signin" onClick={handleSignOut}>SignOut</button>
-                        <p>Don't have an account?<span onClick={()=>{navigate('/user')}}>signup</span></p>
+                        <p>Don't have an account?<span style={{cursor: 'pointer'}} onClick={()=>{navigate('/user')}}>signup</span></p>
                         
                         
                     </form>
