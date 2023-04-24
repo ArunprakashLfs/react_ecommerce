@@ -19,12 +19,16 @@
       justify-content: center;
       transition: transform .3s;
       align-items: center;
-      .background-image :hover{
+      .background-image &:hover{
         transform: scale(1.1);
       }
       .img{
         max-width: 360px;
         height: 240px;
+        &:hover{
+          scale: 110%;
+          animation: 1000;
+        }
        
       }
     }
@@ -45,6 +49,10 @@
         background-color: #111;
         color: #fff;
         cursor: pointer;
+        &:hover{
+          scale: 110%;
+          animation: 1000;
+        }
       }
     }
   }

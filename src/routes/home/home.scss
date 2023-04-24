@@ -49,7 +49,7 @@
                 font-size: 22px;
                 color: #4a4a4a;
             }
-            h4 {
+            button{
                 font-weight: lighter;
                 font-size: 16px;
             }
@@ -66,10 +66,10 @@
                 object-fit: cover;
                 background-size: cover;
                 background-position: center;
-                :hover{
-                    scale: 110;
-                    animation: 1000s;
-                }
+                // &:hover{
+                //     scale: 90%;
+                //     animation: 1000s;
+                // }
             }
         }
 
