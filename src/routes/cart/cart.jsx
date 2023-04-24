@@ -19,7 +19,7 @@ const Cart =()=>{
             return price;
         });
         setTotalAmount(price);
-    }, [cartData])
+    }, [cartData]);
     const handleCheckout =()=>{
        if(totalAmount===0){
         toast.error("Add cart items to continue")
