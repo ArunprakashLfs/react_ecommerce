@@ -4,7 +4,7 @@ import './home.scss'
 import Footer from '../../components/footer/footer';
 // import { useDispatch } from 'react-redux';
 // import Shop from '../shop/shop';
-// import Banner from '../../components/Banner/Banner';
+import Banner from '../../components/Banner/Banner';
 // import { categoryFilter } from '../../redux/slice';
 import { useNavigate } from 'react-router-dom';
 
@@ -132,7 +132,7 @@ const Home =()=>{
 
     return (
         <div >
-            {/* <Banner store={store}/> */}
+            <Banner store={store}/>
             <div className='heading'>
               <h1>Shopping Everyday</h1>
               <strong> when online retailers and sellers of goods were a novelty. Today, there are innumerable virtual stores and malls on the internet selling all types of consumer goods.</strong>
