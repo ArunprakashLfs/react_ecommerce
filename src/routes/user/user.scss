@@ -68,6 +68,8 @@
                     padding: 15px;
                     border-radius: 15px;
                     box-shadow: inset 0 0 8px #f9f8fc;
+                    scale: 110%;
+                    animation: 1000;
                 }
             }
             
@@ -82,6 +84,10 @@
             padding: 10px;
             border-radius: 3px;
             cursor: pointer;
+            &:hover{
+                scale: 110%;
+                animation: 1000;
+            }
             
         }
         .google{
