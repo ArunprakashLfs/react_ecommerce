@@ -92,7 +92,7 @@ const Cart =()=>{
                 )
                 
             })}
-                    {cartData.length===0?<p ></p>:<button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>}
+                    {cartData.length===0?<h1 >CART EMPTY SHOP NOW</h1>:<button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>}
 
         </div>
         
