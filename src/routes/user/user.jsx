@@ -111,7 +111,7 @@ const User = ()=>{
             <Footer/>
             <ToastContainer
                     position='top-center'
-                    // autoClose={2000}
+                    autoClose={2000}
                     hideProgressBar={false}
                     newestOnTop={false}
                     closeOnClick
