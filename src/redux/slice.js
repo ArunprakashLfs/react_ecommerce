@@ -37,14 +37,27 @@ export const slice= createSlice({
             }
         },
         decrement: (state, action) =>{
+            // const item = state.Data.find(
+            //     (item) => item.id === action.payload.id
+            // );
+            // if(item.quantity===0){
+            //     deleteFromCart(item.id)
+            // }else{
+            //     item.quantity--
+            // }
             const item = state.Data.find(
                 (item) => item.id === action.payload.id
-            );
-            if(item.quantity===0){
-                deleteFromCart(item.id)
-            }else{
-                item.quantity--
-            }
+              );
+            
+              if (item.quantity > 0) {
+                item.quantity--;
+              }
+            
+              // remove item from cart if quantity is zero
+              if (item.quantity === 0) {
+                const index = state.Data.indexOf(item);
+                state.Data.splice(index, 1);
+              }
         },
         //user-state
         addUserWithEmail:(state, action)=>{

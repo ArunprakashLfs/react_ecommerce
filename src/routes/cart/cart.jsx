@@ -4,6 +4,7 @@ import { useState } from "react";
 import './cart.scss';
 import { decrement, deleteFromCart, increment, resetCart } from "../../redux/slice";
 import { ToastContainer, toast } from "react-toastify";
+// import { Navigate } from "react-router-dom";
 
 const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
@@ -41,7 +42,11 @@ const Cart =()=>{
             toast.error("login to continue")
         }
        }
+
     }
+    // const handleNavigate=()=>{
+
+    // }
     return (
         <div className="main"> 
             <div className="cart-main">
@@ -83,12 +88,14 @@ const Cart =()=>{
                        
                     </div>
                     
+                    
                 )
                 
             })}
-        <button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>
-        </div>
+                    {cartData.length===0?<button >Add</button>:<button onClick={()=>dispatch(resetCart()) & toast.error('Your Cart is Empty')}>Reset</button>}
 
+        </div>
+        
         <div className="totalValue">
                 <h3>Total Amount</h3>
                 <p><strong>Total: ${totalAmount}</strong></p>
