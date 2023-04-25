@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import './cart.scss';
@@ -8,18 +8,27 @@ import { ToastContainer, toast } from "react-toastify";
 const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
     const userInfo = useSelector((state)=>state.nithin.userInfo);
-    let cartData =[...Data];
+    // let cartData =[...Data];
     // const [payNow, setPaynow] = useState(false);
     const dispatch = useDispatch();
     let [totalAmount, setTotalAmount] = useState('');
-    useEffect(()=>{
+    // useEffect(()=>{
+    //     let price = 0;
+    //     cartData.map((val)=>{
+    //         price += val.price * val.quantity;
+    //         return price;
+    //     });
+    //     setTotalAmount(price);
+    // }, [cartData]);
+    const cartData = useMemo(() => [...Data], [Data]);
+
+    useEffect(() => {
         let price = 0;
-        cartData.map((val)=>{
-            price += val.price * val.quantity;
-            return price;
+        cartData.forEach((item) => {
+          price += item.price * item.quantity;
         });
         setTotalAmount(price);
-    }, [cartData]);
+      }, [cartData]);
     const handleCheckout =()=>{
        if(totalAmount===0){
         toast.error("Add cart items to continue")
