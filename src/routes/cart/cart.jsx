@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import './cart.scss';
@@ -8,18 +8,23 @@ import { ToastContainer, toast } from "react-toastify";
 const Cart =()=>{
     const Data = useSelector((state)=>state.nithin.Data);
     const userInfo = useSelector((state)=>state.nithin.userInfo);
-    let cartData =[...Data];
+    // let cartData =[...Data];
     // const [payNow, setPaynow] = useState(false);
     const dispatch = useDispatch();
     let [totalAmount, setTotalAmount] = useState('');
-    useEffect(()=>{
+    let [cartData, setCartData] = useState([...Data])
+    const logCount = useCallback(()=>{
         let price = 0;
         cartData.map((val)=>{
             price += val.price * val.quantity;
             return price;
         });
         setTotalAmount(price);
-    }, [cartData]);
+        
+    }, [cartData])
+    useEffect(()=>{
+        logCount()
+    },[logCount])
     const handleCheckout =()=>{
        if(totalAmount===0){
         toast.error("Add cart items to continue")
@@ -38,7 +43,7 @@ const Cart =()=>{
             <div className="cart-main">
             
             <h2>Shopping cart</h2>
-            {cartData.map((val)=>{
+            {setCartData.map((val)=>{
                 return(
                     <div key ={val.id} className="cart-container">
                         <div className="cart-items">
